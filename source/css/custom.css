@@ -1,77 +1,831 @@
 /* ============================================================
-   站点自定义配色
-   与 /img/hero.svg 的深空蓝紫视觉保持一致
+   温馨萌宠 · 阳光猫咪书房主题样式 (Cozy Cat-Companion Study)
+   保留学术笔记的清晰可读性，同时注入温暖治愈的萌宠陪读氛围
    ============================================================ */
 
 :root {
-  /* 页面与卡片 */
-  --global-bg: #f8fafc;
-  --card-bg: #ffffff;
-  --sidebar-bg: #f8fafc;
-  --sidebar-menu-bg: #ffffff;
+  color-scheme: light dark;
 
-  /* 文字 */
-  --font-color: #1e293b;
-  --text-highlight-color: #0f172a;
-  --card-meta: #64748b;
+  /* 页面与卡片 — 暖阳奶咖 · 柿子橘猫 */
+  --global-bg: #fdf8f3;
+  --card-bg: #fffdf9;
+  --sidebar-bg: #faf2e9;
+  --sidebar-menu-bg: #fffdf9;
 
-  /* 交互 */
-  --search-bg: #f1f5f9;
-  --search-input-color: #1e293b;
-  --search-a-color: #4f46e5;
-  --btn-bg: #4f46e5;
+  /* 文字（均满足 WCAG AA >= 4.5:1 对比度） */
+  --font-color: #3d2e24;
+  --text-highlight-color: #2c1e16;
+  --card-meta: #7c6354;
+
+  /* 交互与主色 */
+  --search-bg: #f9efe4;
+  --search-input-color: #3d2e24;
+  --search-a-color: #bf532c;
+  --btn-bg: #bf532c;
   --btn-color: #ffffff;
-  --btn-hover-color: #8b5cf6;
-  --text-bg-hover: rgba(99, 102, 241, 0.12);
-  --scrollbar-color: #a5b4fc;
+  --btn-hover-color: #a34320;
+  --text-bg-hover: rgba(191, 83, 44, 0.12);
+  --scrollbar-color: #d49576;
+  --mark-bg: rgba(54, 32, 19, 0.42);
 
   /* 分隔与引用 */
-  --hr-border: #c7d2fe;
-  --hr-before-color: #818cf8;
-  --blockquote-color: #475569;
-  --blockquote-bg: rgba(99, 102, 241, 0.08);
-  --toc-link-color: #64748b;
+  --hr-border: #eccbb5;
+  --hr-before-color: #bf532c;
+  --blockquote-color: #5b4639;
+  --blockquote-bg: #fdf2e7;
+  --toc-link-color: #6d5547;
+
+  /* 代码块（高对比度暖奶油纸感） */
+  --hl-bg: #faf4ed;
+  --hl-color: #2c221c;
+  --hltools-bg: #f1e6da;
+  --hltools-color: #5b4639;
+  --hlnumber-bg: #f5ece2;
+  --hlnumber-color: #8c7262;
+  --hlscrollbar-bg: #d4b8a5;
+  --hlexpand-bg: linear-gradient(180deg, rgba(250, 244, 237, 0.65), rgba(250, 244, 237, 0.95));
 
   /* 阴影 */
-  --card-box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --card-hover-box-shadow: 0 14px 36px rgba(79, 70, 229, 0.16);
+  --card-box-shadow: 0 10px 30px rgba(138, 86, 52, 0.08);
+  --card-hover-box-shadow: 0 16px 38px rgba(191, 83, 44, 0.15);
+
+  /* 萌宠主题扩展令牌 */
+  --pet-card-border: #f0dfd0;
+  --pet-pill-bg: #faece0;
+  --pet-pill-text: #7b3a1f;
+  --pet-hover-text: #9a3b1e;
+  --pet-dot-color: rgba(191, 83, 44, 0.045);
+  --pet-glow-1: rgba(245, 179, 132, 0.16);
+  --pet-glow-2: rgba(232, 164, 129, 0.12);
+  --pet-nav-glass: rgba(255, 250, 244, 0.88);
+  --pet-footer-bg: linear-gradient(180deg, #faf0e6 0%, #f3e2d3 100%);
+  --pet-footer-text: #4a372c;
+  --pet-footer-link: #9a3b1e;
+  --pet-avatar-ring: #fff8f0;
 }
 
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+html[data-theme='dark'],
 [data-theme='dark'] {
-  --global-bg: #0b0f19;
-  --card-bg: #131b2e;
-  --sidebar-bg: #0f172a;
-  --sidebar-menu-bg: #131b2e;
+  color-scheme: dark;
 
-  --font-color: rgba(226, 232, 240, 0.85);
-  --text-highlight-color: #f1f5f9;
-  --card-meta: rgba(148, 163, 184, 0.9);
+  /* 壁炉夜读 · 暖可可猫窝 */
+  --global-bg: #1b1512;
+  --card-bg: #261e1a;
+  --sidebar-bg: #211915;
+  --sidebar-menu-bg: #261e1a;
 
-  --search-bg: #0f172a;
-  --search-input-color: rgba(226, 232, 240, 0.85);
-  --search-a-color: #c7d2fe;
-  --btn-bg: #1e293b;
-  --btn-color: rgba(226, 232, 240, 0.9);
-  --btn-hover-color: #6366f1;
-  --text-bg-hover: rgba(99, 102, 241, 0.2);
-  --scrollbar-color: #475569;
+  --font-color: #efe3d8;
+  --text-highlight-color: #fff5ec;
+  --card-meta: #c4b0a1;
 
-  --hr-border: rgba(129, 140, 248, 0.3);
-  --hr-before-color: rgba(129, 140, 248, 0.55);
-  --blockquote-color: rgba(226, 232, 240, 0.7);
-  --blockquote-bg: #1a2438;
-  --toc-link-color: rgba(203, 213, 225, 0.65);
-  --timeline-bg: #1a2438;
+  --search-bg: #221a16;
+  --search-input-color: #efe3d8;
+  --search-a-color: #ffab85;
+  --btn-bg: #8e3d21;
+  --btn-color: #fff5ec;
+  --btn-hover-color: #bf532c;
+  --text-bg-hover: rgba(255, 171, 133, 0.16);
+  --scrollbar-color: #6f5446;
+  --mark-bg: rgba(20, 14, 11, 0.62);
 
-  --card-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --card-hover-box-shadow: 0 14px 36px rgba(99, 102, 241, 0.25);
+  --hr-border: rgba(230, 164, 129, 0.28);
+  --hr-before-color: #ffab85;
+  --blockquote-color: #dfd0c3;
+  --blockquote-bg: #2e241f;
+  --toc-link-color: #cdb9aa;
+  --timeline-bg: #2e241f;
+
+  --hl-bg: #1e1714;
+  --hl-color: #f0e4d8;
+  --hltools-bg: #29201c;
+  --hltools-color: #d6c3b5;
+  --hlnumber-bg: #1e1714;
+  --hlnumber-color: #968072;
+  --hlscrollbar-bg: #5a463b;
+  --hlexpand-bg: linear-gradient(180deg, rgba(30, 23, 20, 0.65), rgba(30, 23, 20, 0.95));
+
+  --card-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  --card-hover-box-shadow: 0 16px 38px rgba(217, 119, 66, 0.2);
+
+  --pet-card-border: rgba(230, 164, 129, 0.16);
+  --pet-pill-bg: #352923;
+  --pet-pill-text: #f3cbb5;
+  --pet-hover-text: #ffbfa3;
+  --pet-dot-color: rgba(255, 191, 163, 0.035);
+  --pet-glow-1: rgba(191, 83, 44, 0.09);
+  --pet-glow-2: rgba(217, 119, 66, 0.07);
+  --pet-nav-glass: rgba(34, 26, 22, 0.88);
+  --pet-footer-bg: linear-gradient(180deg, #1b1512 0%, #140f0d 100%);
+  --pet-footer-text: #d6c3b5;
+  --pet-footer-link: #ffab85;
+  --pet-avatar-ring: #3a2d26;
 }
 
-/* 深色模式下正文链接提亮，保证对比度 */
+/* 滚动条配色（不对其施加 transition，规避 WebKit 闪烁问题） */
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) transparent;
+}
+
+@supports not (scrollbar-color: auto) {
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--scrollbar-color);
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+/* 温暖纸感波点底纹 */
+body {
+  background-color: var(--global-bg);
+  background-image:
+    radial-gradient(circle at 12% 18%, var(--pet-glow-1) 0, transparent 36%),
+    radial-gradient(circle at 88% 82%, var(--pet-glow-2) 0, transparent 34%),
+    radial-gradient(var(--pet-dot-color) 1.25px, transparent 1.25px);
+  background-size: 100% 100%, 100% 100%, 26px 26px;
+  background-attachment: fixed;
+}
+
+/* ---------------- 顶部横幅与奶油波浪 ---------------- */
+#page-header.full_page {
+  min-height: 360px;
+  max-height: 600px;
+  background-attachment: scroll;
+}
+
+#page-header.not-home-page {
+  height: 280px;
+}
+
+#page-header.post-bg {
+  height: 320px;
+}
+
+@media screen and (max-width: 768px) {
+  #page-header.full_page {
+    min-height: 310px;
+  }
+
+  #page-header.not-home-page {
+    height: 230px;
+  }
+
+  #page-header.post-bg {
+    height: 280px;
+  }
+}
+
+#page-header:not(.not-top-img)::before {
+  background: linear-gradient(
+    180deg,
+    rgba(46, 28, 18, 0.34) 0%,
+    rgba(58, 34, 21, 0.44) 55%,
+    rgba(42, 24, 15, 0.56) 100%
+  );
+}
+
+#page-header:not(.not-top-img)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 2;
+  height: 42px;
+  pointer-events: none;
+  background-color: var(--global-bg);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C240,76 480,4 720,38 C960,72 1200,12 1440,36 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C240,76 480,4 720,38 C960,72 1200,12 1440,36 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+#page-header #site-info,
+#page-header #page-site-info,
+#page-header #post-info {
+  z-index: 3;
+}
+
+#page-header #page-site-info {
+  top: 52%;
+  transform: translateY(-50%);
+}
+
+#page-header.post-bg #post-info {
+  bottom: 48px;
+}
+
+#page-header #site-title,
+#page-header #site-subtitle {
+  color: #fffaf4;
+  text-shadow: 0 3px 14px rgba(34, 18, 9, 0.45);
+}
+
+#page-header #scroll-down {
+  bottom: 36px;
+  z-index: 3;
+}
+
+#page-header #site_social_icons .social-icon i {
+  color: #fffaf4 !important;
+}
+
+/* 顶部导航栏毛玻璃暖奶白 */
+#nav #blog-info .site-icon {
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 248, 240, 0.88);
+  box-shadow: 0 2px 8px rgba(61, 46, 36, 0.18);
+  object-fit: cover;
+}
+
+#page-header.nav-fixed > #nav,
+#page-header.not-top-img > #nav {
+  background: var(--pet-nav-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--pet-card-border);
+  box-shadow: 0 6px 20px rgba(138, 86, 52, 0.08);
+}
+
+[data-theme='dark'] #page-header.nav-fixed > #nav,
+[data-theme='dark'] #page-header.not-top-img > #nav {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------- 圆润卡片与首页列表 ---------------- */
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+#post,
+#page,
+#archive,
+#tag,
+#category {
+  border-radius: 18px;
+  border: 1px solid var(--pet-card-border);
+}
+
+#recent-posts .recent-post-item {
+  position: relative;
+  height: auto;
+  margin-bottom: 16px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+#recent-posts .recent-post-item::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+  opacity: 0.045;
+  background-color: var(--btn-bg);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='16' cy='24' rx='6' ry='8'/%3E%3Cellipse cx='27' cy='15' rx='5.5' ry='7.5'/%3E%3Cellipse cx='40' cy='16' rx='5.5' ry='7.5'/%3E%3Cellipse cx='50' cy='25' rx='5.8' ry='7.8'/%3E%3Cpath d='M32 28c-9 0-16 7-16 14.5 0 5.5 4.2 9.5 9.5 9.5 2.5 0 4.5-1.1 6.5-1.1s4 1.1 6.5 1.1c5.3 0 9.5-4 9.5-9.5C48 35 41 28 32 28z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='16' cy='24' rx='6' ry='8'/%3E%3Cellipse cx='27' cy='15' rx='5.5' ry='7.5'/%3E%3Cellipse cx='40' cy='16' rx='5.5' ry='7.5'/%3E%3Cellipse cx='50' cy='25' rx='5.8' ry='7.8'/%3E%3Cpath d='M32 28c-9 0-16 7-16 14.5 0 5.5 4.2 9.5 9.5 9.5 2.5 0 4.5-1.1 6.5-1.1s4 1.1 6.5 1.1c5.3 0 9.5-4 9.5-9.5C48 35 41 28 32 28z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transform: rotate(15deg);
+}
+
+#recent-posts .recent-post-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(191, 83, 44, 0.35);
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 22px 26px 20px;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover > .article-meta-wrap {
+  display: contents;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta:not(.tags) {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background-color: var(--pet-pill-bg);
+  border: 1px solid var(--pet-card-border);
+  color: var(--pet-hover-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta:not(.tags) .article-meta-separator {
+  display: none;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta:not(.tags) a {
+  color: var(--pet-hover-text);
+  margin: 0;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta:not(.tags) a:hover {
+  text-decoration: none;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .post-meta-date {
+  order: 2;
+  margin-left: auto;
+  color: var(--card-meta);
+  font-size: 0.84rem;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .post-meta-date i {
+  margin-right: 5px;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .post-meta-date .article-meta-label {
+  display: none;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover > .article-title {
+  order: 3;
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 12px 0 8px;
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text-highlight-color);
+}
+
+#recent-posts .recent-post-item > .recent-post-info > .article-title {
+  font-weight: 700;
+}
+
+#recent-posts .recent-post-item > .recent-post-info > .article-title:hover {
+  color: var(--pet-hover-text);
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover > .content {
+  order: 4;
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0 0 14px;
+  -webkit-line-clamp: 3;
+  color: var(--blockquote-color);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags {
+  order: 5;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags .article-meta-separator,
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags i.fa-tag,
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags .article-meta-link {
+  display: none;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags a.article-meta__tags {
+  margin: 0;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background-color: var(--search-bg);
+  border: 1px solid var(--pet-card-border);
+  color: var(--card-meta);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags a.article-meta__tags::before {
+  content: '#';
+  margin-right: 2px;
+  opacity: 0.7;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover .article-meta.tags a.article-meta__tags:hover {
+  background-color: var(--pet-pill-bg);
+  color: var(--pet-hover-text);
+  border-color: rgba(191, 83, 44, 0.35);
+  text-decoration: none;
+}
+
+#recent-posts .recent-post-item > .recent-post-info.no-cover::after {
+  content: '阅读全文 →';
+  order: 6;
+  margin-left: auto;
+  padding-left: 12px;
+  color: var(--card-meta);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+#recent-posts .recent-post-item:hover > .recent-post-info.no-cover::after {
+  color: var(--pet-hover-text);
+  transform: translateX(3px);
+}
+
+@media screen and (max-width: 768px) {
+  #recent-posts .recent-post-item > .recent-post-info.no-cover {
+    padding: 18px;
+  }
+
+  #recent-posts .recent-post-item > .recent-post-info.no-cover > .article-title {
+    font-size: 1.2rem;
+  }
+
+  #recent-posts .recent-post-item > .recent-post-info.no-cover::after {
+    display: none;
+  }
+}
+
+#recent-posts .recent-post-item > .recent-post-info > .content {
+  color: var(--blockquote-color);
+  line-height: 1.75;
+}
+
+#recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap a:hover {
+  color: var(--pet-hover-text);
+}
+
+/* ---------------- 猫咪头像卡片与萌宠细节 ---------------- */
+#aside-content .card-info,
+#aside-content .card-announcement {
+  position: relative;
+}
+
+#aside-content .card-info::before,
+#aside-content .card-announcement::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 52px;
+  height: 52px;
+  pointer-events: none;
+  opacity: 0.085;
+  background-color: var(--btn-bg);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='16' cy='24' rx='6' ry='8'/%3E%3Cellipse cx='27' cy='15' rx='5.5' ry='7.5'/%3E%3Cellipse cx='40' cy='16' rx='5.5' ry='7.5'/%3E%3Cellipse cx='50' cy='25' rx='5.8' ry='7.8'/%3E%3Cpath d='M32 28c-9 0-16 7-16 14.5 0 5.5 4.2 9.5 9.5 9.5 2.5 0 4.5-1.1 6.5-1.1s4 1.1 6.5 1.1c5.3 0 9.5-4 9.5-9.5C48 35 41 28 32 28z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='16' cy='24' rx='6' ry='8'/%3E%3Cellipse cx='27' cy='15' rx='5.5' ry='7.5'/%3E%3Cellipse cx='40' cy='16' rx='5.5' ry='7.5'/%3E%3Cellipse cx='50' cy='25' rx='5.8' ry='7.8'/%3E%3Cpath d='M32 28c-9 0-16 7-16 14.5 0 5.5 4.2 9.5 9.5 9.5 2.5 0 4.5-1.1 6.5-1.1s4 1.1 6.5 1.1c5.3 0 9.5-4 9.5-9.5C48 35 41 28 32 28z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transform: rotate(14deg);
+}
+
+#aside-content .avatar-img {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  border: 4px solid var(--pet-avatar-ring);
+  box-shadow: 0 8px 22px rgba(191, 83, 44, 0.22);
+  background: #fde8d7;
+}
+
+#aside-content .avatar-img img,
+#sidebar-menus .avatar-img img {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+/* 替换 360° 旋转为俏皮的「猫咪歪头杀」 */
+#aside-content .avatar-img:hover img,
+#sidebar-menus .avatar-img:hover img {
+  transform: scale(1.07) rotate(-6deg);
+}
+
+#aside-content .card-info .author-info-name {
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--text-highlight-color);
+}
+
+#aside-content .card-info .author-info-description {
+  margin-top: 4px;
+  color: var(--card-meta);
+  font-size: 0.94em;
+  line-height: 1.55;
+}
+
+#aside-content .card-info #card-info-btn {
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+#aside-content .card-announcement .item-headline i {
+  color: #d97742;
+}
+
+/* ---------------- 修复侧边栏悬停对比度 & 胶囊标签云 ---------------- */
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a {
+  border-radius: 10px;
+}
+
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
+  background-color: var(--text-bg-hover);
+  color: var(--pet-hover-text);
+}
+
+#aside-content .card-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 4px;
+}
+
+#aside-content .card-tag-cloud a {
+  font-size: 0.88rem !important;
+  line-height: 1.45;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background-color: var(--pet-pill-bg);
+  color: var(--pet-pill-text) !important;
+  border: 1px solid var(--pet-card-border);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+#aside-content .card-tag-cloud a:hover {
+  background-color: var(--btn-bg);
+  color: var(--btn-color) !important;
+  border-color: var(--btn-bg);
+  transform: translateY(-1px);
+}
+
+/* ---------------- 正文排版、猫爪分隔线、标签与页脚 ---------------- */
+.custom-hr {
+  border-top-style: dashed;
+}
+
+.custom-hr::before {
+  content: '\f1b0' !important;
+  font-weight: 900 !important;
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free' !important;
+}
+
+#article-container h2 {
+  padding-left: 14px;
+  border-left: 4px solid var(--btn-bg);
+  border-radius: 2px;
+}
+
+.container blockquote {
+  border-left: 4px solid #d97742;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+}
+
+/* 代码块清晰高对比度语法配色 */
+.container figure.highlight {
+  border: 1px solid var(--pet-card-border);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(138, 86, 52, 0.08);
+}
+
+.container figure.highlight pre .comment {
+  color: #7c6a5e;
+}
+
+.container figure.highlight pre .keyword,
+.container figure.highlight pre .title,
+.container figure.highlight pre .css .hexcolor,
+.container figure.highlight pre .tag {
+  color: #0f6e72;
+}
+
+.container figure.highlight pre .string,
+.container figure.highlight pre .value,
+.container figure.highlight pre .inheritance,
+.container figure.highlight pre .header,
+.container figure.highlight pre .ruby .symbol,
+.container figure.highlight pre .xml .cdata,
+.container figure.highlight pre .special,
+.container figure.highlight pre .formula,
+.container figure.highlight pre .ruby .class .title,
+.container figure.highlight pre .css .rules .attribute {
+  color: #2c6e31;
+}
+
+.container figure.highlight pre .number,
+.container figure.highlight pre .preprocessor,
+.container figure.highlight pre .literal,
+.container figure.highlight pre .params,
+.container figure.highlight pre .constant,
+.container figure.highlight pre .command {
+  color: #b4471d;
+}
+
+.container figure.highlight pre .built_in {
+  color: #9a5b00;
+}
+
+.container figure.highlight pre .function,
+.container figure.highlight pre .python .decorator,
+.container figure.highlight pre .python .title,
+.container figure.highlight pre .ruby .function .title,
+.container figure.highlight pre .ruby .title .keyword,
+.container figure.highlight pre .perl .sub,
+.container figure.highlight pre .javascript .title,
+.container figure.highlight pre .coffeescript .title {
+  color: #2b5b9e;
+}
+
+.container figure.highlight pre .variable,
+.container figure.highlight pre .attribute,
+.container figure.highlight pre .regexp,
+.container figure.highlight pre .ruby .constant,
+.container figure.highlight pre .xml .tag .title,
+.container figure.highlight pre .xml .pi,
+.container figure.highlight pre .xml .doctype,
+.container figure.highlight pre .html .doctype,
+.container figure.highlight pre .css .id,
+.container figure.highlight pre .tag .name,
+.container figure.highlight pre .css .class,
+.container figure.highlight pre .css .pseudo {
+  color: #a93226;
+}
+
+.container figure.highlight pre .meta,
+.container figure.highlight pre .tag .attr,
+.container figure.highlight pre .javascript .function {
+  color: #6f42c1;
+}
+
+[data-theme='dark'] .container figure.highlight {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .container figure.highlight pre .comment {
+  color: #9c897b;
+}
+
+[data-theme='dark'] .container figure.highlight pre .keyword,
+[data-theme='dark'] .container figure.highlight pre .title,
+[data-theme='dark'] .container figure.highlight pre .css .hexcolor,
+[data-theme='dark'] .container figure.highlight pre .tag {
+  color: #6fd6d6;
+}
+
+[data-theme='dark'] .container figure.highlight pre .string,
+[data-theme='dark'] .container figure.highlight pre .value,
+[data-theme='dark'] .container figure.highlight pre .inheritance,
+[data-theme='dark'] .container figure.highlight pre .header,
+[data-theme='dark'] .container figure.highlight pre .ruby .symbol,
+[data-theme='dark'] .container figure.highlight pre .xml .cdata,
+[data-theme='dark'] .container figure.highlight pre .special,
+[data-theme='dark'] .container figure.highlight pre .formula,
+[data-theme='dark'] .container figure.highlight pre .ruby .class .title,
+[data-theme='dark'] .container figure.highlight pre .css .rules .attribute {
+  color: #9fd479;
+}
+
+[data-theme='dark'] .container figure.highlight pre .number,
+[data-theme='dark'] .container figure.highlight pre .preprocessor,
+[data-theme='dark'] .container figure.highlight pre .literal,
+[data-theme='dark'] .container figure.highlight pre .params,
+[data-theme='dark'] .container figure.highlight pre .constant,
+[data-theme='dark'] .container figure.highlight pre .command {
+  color: #ff9e75;
+}
+
+[data-theme='dark'] .container figure.highlight pre .built_in {
+  color: #ffd173;
+}
+
+[data-theme='dark'] .container figure.highlight pre .function,
+[data-theme='dark'] .container figure.highlight pre .python .decorator,
+[data-theme='dark'] .container figure.highlight pre .python .title,
+[data-theme='dark'] .container figure.highlight pre .ruby .function .title,
+[data-theme='dark'] .container figure.highlight pre .ruby .title .keyword,
+[data-theme='dark'] .container figure.highlight pre .perl .sub,
+[data-theme='dark'] .container figure.highlight pre .javascript .title,
+[data-theme='dark'] .container figure.highlight pre .coffeescript .title {
+  color: #8ab4f8;
+}
+
+[data-theme='dark'] .container figure.highlight pre .variable,
+[data-theme='dark'] .container figure.highlight pre .attribute,
+[data-theme='dark'] .container figure.highlight pre .regexp,
+[data-theme='dark'] .container figure.highlight pre .ruby .constant,
+[data-theme='dark'] .container figure.highlight pre .xml .tag .title,
+[data-theme='dark'] .container figure.highlight pre .xml .pi,
+[data-theme='dark'] .container figure.highlight pre .xml .doctype,
+[data-theme='dark'] .container figure.highlight pre .html .doctype,
+[data-theme='dark'] .container figure.highlight pre .css .id,
+[data-theme='dark'] .container figure.highlight pre .tag .name,
+[data-theme='dark'] .container figure.highlight pre .css .class,
+[data-theme='dark'] .container figure.highlight pre .css .pseudo {
+  color: #ff8a80;
+}
+
+[data-theme='dark'] .container figure.highlight pre .meta,
+[data-theme='dark'] .container figure.highlight pre .tag .attr,
+[data-theme='dark'] .container figure.highlight pre .javascript .function {
+  color: #d0a8ff;
+}
+
 [data-theme='dark'] #article-container a {
-  color: #a5b4fc;
+  color: #ffab85;
 }
 
 [data-theme='dark'] #article-container a:hover {
-  color: #c7d2fe;
+  color: #ffd0b8;
+}
+
+#post .tag_share .post-meta__tags {
+  border-radius: 999px;
+  border-color: var(--btn-bg);
+  color: var(--pet-hover-text);
+}
+
+#post .tag_share .post-meta__tags:hover {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+}
+
+.tag-cloud-list a {
+  border-radius: 999px;
+}
+
+.layout .pagination > * {
+  border-radius: 10px;
+}
+
+#rightside > div > button,
+#rightside > div > a {
+  border-radius: 10px;
+}
+
+/* 页脚改为温柔暖杏奶咖底色，告别生硬纯色块 */
+#footer {
+  background: var(--pet-footer-bg) !important;
+  border-top: 1px solid var(--pet-card-border);
+}
+
+#footer::before {
+  display: none;
+}
+
+#footer > *,
+#footer .footer-other {
+  color: var(--pet-footer-text);
+}
+
+#footer a {
+  color: var(--pet-footer-link);
+  font-weight: 500;
+}
+
+#footer a:hover {
+  color: var(--btn-hover-color);
+  text-decoration: underline;
+}
+
+/* Windows 高对比度 / 强制色彩模式回退边界 */
+@media (forced-colors: active) {
+  .recent-post-item,
+  #aside-content .card-widget,
+  #post,
+  #page,
+  #archive,
+  #tag,
+  #category,
+  #card-info-btn,
+  #aside-content .card-tag-cloud a,
+  #rightside > div > button,
+  #rightside > div > a {
+    border: 1px solid CanvasText;
+  }
+
+  #page-header:not(.not-top-img)::after {
+    display: none;
+  }
 }

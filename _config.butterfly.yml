@@ -11,11 +11,11 @@
 
 nav:
   # Navigation bar logo image
-  logo:
+  logo: /img/cat-badge.svg
   display_title: true
   display_post_title: true
   # Whether to fix navigation bar
-  fixed: false
+  fixed: true
 
 menu:
   首页: / || fas fa-home
@@ -23,7 +23,7 @@ menu:
   归档: /archives/ || fas fa-archive
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
-  关于: /about/ || fas fa-user
+  关于: /about/ || fas fa-paw
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -35,7 +35,7 @@ menu:
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
   theme: light
-  macStyle: false
+  macStyle: true
   # Code block height limit (unit: px)
   height_limit: false
   word_wrap: false
@@ -62,31 +62,28 @@ social:
 favicon: /img/favicon.ico
 
 avatar:
-  img: /img/avatar.svg
+  img: https://images.unsplash.com/photo-1649023108649-cb92a72f23f2?auto=format&fit=crop&w=480&h=480&q=85
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /img/hero.svg
+default_top_img: https://images.unsplash.com/photo-1571570703598-39eb580a0329?auto=format&fit=crop&w=1600&q=85
 
 # The banner image of index page
-index_img: /img/hero.svg
+index_img: https://images.unsplash.com/photo-1571570703598-39eb580a0329?auto=format&fit=crop&w=1600&q=85
 
 # The banner image of archive page
-archive_img: /img/hero.svg
+archive_img: https://images.unsplash.com/photo-1571570703598-39eb580a0329?auto=format&fit=crop&w=1600&q=85
 
 # Note: tag page, not tags page
-tag_img: /img/hero.svg
+tag_img: https://images.unsplash.com/photo-1571570703598-39eb580a0329?auto=format&fit=crop&w=1600&q=85
 
-# The banner image of tag page, you can set the banner image for each tag
+# The banner image of category page, you can set the banner image for each category
 # Format:
-#  - tag name: xxxxx
-tag_per_img:
-
-# Note: category page, not categories page
-category_img: /img/hero.svg
+#  - category name: xxxxx
+category_img: https://images.unsplash.com/photo-1571570703598-39eb580a0329?auto=format&fit=crop&w=1600&q=85
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
@@ -108,12 +105,12 @@ cover:
   archives_enable: true
   # When cover is not set, the default cover is displayed
   default_cover:
-    # - xxx.jpg
+    # 留空则不强制每篇文章配封面图；需要时可在单篇文章 front-matter 中单独指定 cover
 
 # Replace Broken Images
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: https://images.unsplash.com/photo-1649023108649-cb92a72f23f2?auto=format&fit=crop&w=480&h=480&q=85
+  post_page: https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=960&q=80
 
 # A simple 404 page
 error_404:
@@ -129,7 +126,7 @@ post_meta:
     # Choose: date / relative
     date_format: date
     categories: true
-    tags: false
+    tags: true
     label: true
   post:
     # Choose: left / center
@@ -149,9 +146,9 @@ post_meta:
 # The top_img settings of home page
 # default: top img - full screen, site info - middle
 # The position of site info, eg: 300px/300em/300rem/10%
-index_site_info_top:
+index_site_info_top: 34%
 # The height of top_img, eg: 300px/300em/300rem
-index_top_img_height:
+index_top_img_height: 58vh
 
 # The subtitle on homepage
 subtitle:
@@ -171,9 +168,9 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - 具身智能（Embodied AI）· 视觉语言导航（VLN）
-    - 大模型微调 · 强化学习 · 探索自主智能体
-    - 记录论文阅读、方法梳理与实验笔记
+    - 🐾 具身智能（Embodied AI）· 视觉语言导航（VLN）
+    - 🐱 猫咪陪读的午后 · 记录大模型与强化学习笔记
+    - ☀️ 慢下来啃硬核论文，把思考留在温暖的小窝里
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -191,9 +188,9 @@ index_layout: 3
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 2
   # If you set method to 2 or 3, the length need to config
-  length: 500
+  length: 180
 
 # --------------------------------------
 # Post Settings
@@ -273,7 +270,7 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text:
+  custom_text: '🐾 愿每一份好奇心，都有毛茸茸的温柔回响'
 
 # --------------------------------------
 # Aside Settings
@@ -293,15 +290,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 欢迎来到我的博客
+    description: 具身智能与 VLN 笔记 · 有猫陪读的科研小窝 🐾
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
+      text: GitHub · 去小窝看看
       link: https://github.com/lengbai03
   card_announcement:
     enable: true
-    content: 你好，欢迎来到我的博客 👋
+    content: ☀️ 欢迎来到冷白03的小窝！这里记录具身智能、VLN 与大模型的学习日常，愿每一篇硬核笔记都有毛茸茸的治愈相伴 🐾
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -354,7 +351,7 @@ aside:
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: -1
   card_webinfo:
-    enable: true
+    enable: false
     post_count: true
     last_push_date: true
     sort_order:
@@ -396,7 +393,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 1
   # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
   start:
   end:
@@ -437,7 +434,7 @@ copy:
     limit_count: 150
 
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -780,24 +777,24 @@ site_verification:
 
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
-# 与 /img/hero.svg 的深空蓝紫配色保持一致
+# 温馨萌宠 · 阳光猫咪书房暖调配色
 theme_color:
   enable: true
-  main: "#4f46e5"
-  paginator: "#6366f1"
-  button_hover: "#8b5cf6"
-  text_selection: "#c7d2fe"
-  link_color: "#4f46e5"
-  meta_color: "#64748b"
-  hr_color: "#c7d2fe"
-  code_foreground: "#7c3aed"
-  code_background: "rgba(79, 70, 229, .08)"
-  toc_color: "#6366f1"
-  blockquote_padding_color: "#6366f1"
-  blockquote_background_color: "#6366f1"
-  scrollbar_color: "#a5b4fc"
-  meta_theme_color_light: "#f8fafc"
-  meta_theme_color_dark: "#0b0f19"
+  main: "#bf532c"
+  paginator: "#bf532c"
+  button_hover: "#a34320"
+  text_selection: "#bf532c"
+  link_color: "#bf532c"
+  meta_color: "#7c6354"
+  hr_color: "#e6a481"
+  code_foreground: "#9a3b1e"
+  code_background: "rgba(191, 83, 44, .09)"
+  toc_color: "#bf532c"
+  blockquote_padding_color: "#d97742"
+  blockquote_background_color: "#d97742"
+  scrollbar_color: "#d49576"
+  meta_theme_color_light: "#fdf8f3"
+  meta_theme_color_dark: "#1b1512"
 
 # The user interface setting of category and tag page
 # Choose: index - same as Homepage UI / default - same as archives UI
@@ -859,7 +856,7 @@ blog_title_font:
 hr_icon:
   enable: true
   # The unicode value of Font Awesome icon, such as '\3423'
-  icon:
+  icon: '\f1b0'
   icon_top:
 
 # Typewriter Effect
@@ -933,8 +930,7 @@ clickShowText:
 # Choose: fancybox / medium_zoom
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
-# Leave it empty if you don't need lightbox
-lightbox:
+lightbox: medium_zoom
 
 # --------------------------------------
 # Tag Plugins settings
@@ -1031,11 +1027,11 @@ instantpage: false
 # Lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # Use browser's native lazyload instead of vanilla-lazyload
-  native: false
+  native: true
   # Specify the field to use lazyload (site or post)
-  field: site
+  field: post
   placeholder:
   blur: false
 
@@ -1078,6 +1074,7 @@ css_prefix: true
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
+    - <meta name="color-scheme" content="light dark">
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
     # - <script src="xxxx"></script>
